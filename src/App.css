@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0C2C4C;
+  --color-secondary: #F07D2A;
+  --color-accent: #494C4E;
+  --color-background: #FFFFFF;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif; /* Setup Inter as the main sans font */
+}
+
+@layer base {
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-accent);
+  
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-[0_10px_40px_-10px_rgba(12,44,76,0.08)];
+  }
+  .glass-dark {
+    @apply bg-[#0C2C4C]/80 backdrop-blur-md border border-white/10 shadow-lg;
+  }  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* Scroll Reveal Utilities */
+  .reveal-on-scroll { /* Fallback */ opacity: 1; transform: none; } .reveal-on-scroll-original {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .delay-100 { transition-delay: 100ms; }
+  .delay-200 { transition-delay: 200ms; }
+  .delay-300 { transition-delay: 300ms; }
+  .delay-400 { transition-delay: 400ms; }
+  
+  /* Global Luxury Button/Image defaults if missed */
+  .btn-hover {
+    @apply transition-all duration-500 ease-out hover:-translate-y-1 hover:scale-[1.03];
+  }
+  .img-zoom {
+    @apply transition-transform duration-[800ms] ease-out hover:scale-105;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.35s ease, opacity 0.6s ease-out;
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.12),
+    0 0 20px rgba(240,125,42,0.08);
+}
+
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-content {
+  transform: translateY(-2px);
+}
+
