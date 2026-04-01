@@ -27,7 +27,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className={`pt-24 pb-8 relative overflow-hidden font-body transition-all duration-1000 ${
+      className={`pt-24 pb-24 md:pb-8 relative overflow-hidden font-body transition-all duration-1000 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
       style={{

@@ -1,12 +1,12 @@
 ﻿import { useState } from "react";
-import g1 from "/images/gallery/g1.jpeg";
-import g2 from "/images/gallery/g2.jpeg";
-import g3 from "/images/gallery/g3.jpeg";
-import g4 from "/images/gallery/g4.jpeg";
-import g5 from "/images/gallery/g5.jpeg";
-import g6 from "/images/gallery/g6.jpeg";
-
-const images = [g1, g2, g3, g4, g5, g6];
+const images = [
+  "/images/gallery/g1.jpeg",
+  "/images/gallery/g2.jpeg",
+  "/images/gallery/g3.jpeg",
+  "/images/gallery/g4.jpeg",
+  "/images/gallery/g5.jpeg",
+  "/images/gallery/g6.jpeg",
+];
 
 const Overlay = () => (
   <div className="absolute inset-0 bg-transparent group-hover:bg-primary/40 transition-colors duration-500 flex items-center justify-center pointer-events-none">
@@ -62,72 +62,102 @@ export default function Gallery() {
         <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 gap-4 md:gap-6 md:h-[700px]">
           {/* g1 ? large */}
           <div
-            onClick={() => setSelected(images[0])}
+            onClick={() => {
+              setSelected(images[0]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-6 md:row-span-2 relative group overflow-hidden rounded-2xl cursor-pointer h-64 md:h-auto shadow-md hover:shadow-2xl transition-all duration-500 ease-out"
           >
             <img
               src={images[0]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
 
           {/* g2 */}
           <div
-            onClick={() => setSelected(images[1])}
+            onClick={() => {
+              setSelected(images[1]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-3 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer h-48 md:h-auto shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
           >
             <img
               src={images[1]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
 
           {/* g3 */}
           <div
-            onClick={() => setSelected(images[2])}
+            onClick={() => {
+              setSelected(images[2]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-3 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer h-48 md:h-auto shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
           >
             <img
               src={images[2]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
 
           {/* g4 */}
           <div
-            onClick={() => setSelected(images[3])}
+            onClick={() => {
+              setSelected(images[3]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer h-48 md:h-auto shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
           >
             <img
               src={images[3]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
 
           {/* g5 */}
           <div
-            onClick={() => setSelected(images[4])}
+            onClick={() => {
+              setSelected(images[4]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer h-48 md:h-auto shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
           >
             <img
               src={images[4]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
 
           {/* g6 */}
           <div
-            onClick={() => setSelected(images[5])}
+            onClick={() => {
+              setSelected(images[5]);
+              document.body.style.overflow = "hidden";
+            }}
             className="md:col-span-2 md:row-span-1 relative group overflow-hidden rounded-2xl cursor-pointer h-48 md:h-auto shadow-sm hover:shadow-xl transition-all duration-500 ease-out"
           >
             <img
               src={images[5]}
-              alt="Interior painting MD - NextCoat Project" loading="lazy" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
+              alt="Interior painting MD - NextCoat Project"
+              loading="lazy"
+              className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-[1.5s] ease-out"
             />
             <Overlay />
           </div>
@@ -137,37 +167,57 @@ export default function Gallery() {
       {/* Lightbox */}
       {selected && (
         <div
-          className="fixed inset-0 bg-primary/95 z-[100] flex items-center justify-center p-6 backdrop-blur-md transition-opacity duration-300"
-          onClick={() => setSelected(null)}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-5 animate-fade-in"
+          onClick={() => {
+            setSelected(null);
+            document.body.style.overflow = "auto";
+          }}
         >
-          <button
-            onClick={() => setSelected(null)}
-            className="absolute top-8 right-8 w-12 h-12 cursor-pointer rounded-full bg-white/10 hover:bg-secondary flex items-center justify-center text-white transition-all duration-300"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="relative flex items-center justify-center max-w-[95%] max-h-[90%]">
+            <button
+              className="absolute top-5 right-5 bg-black/60 text-white rounded-full p-2 cursor-pointer z-[10000] transition-all duration-300 hover:bg-secondary"
+              onClick={() => {
+                setSelected(null);
+                document.body.style.overflow = "auto";
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="flex flex-col items-center justify-center w-full h-full">
+              <img
+                src={selected}
+                alt="NextCoat Painting Project Full View"
+                className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] animate-[fadeZoom_0.3s_ease]"
+                onClick={(e) => e.stopPropagation()}
               />
-            </svg>
-          </button>
-          <img
-            src={selected}
-            alt="NextCoat Painting Project Full View"
-            className="max-w-6xl max-h-[85vh] w-full object-contain shadow-2xl rounded-lg reveal-on-scroll"
-            onClick={(e) => e.stopPropagation()}
-          />
+            </div>
+            <style>{`
+              @keyframes fadeZoom {
+                from {
+                  opacity: 0;
+                  transform: scale(0.95);
+                }
+                to {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+            `}</style>
+          </div>
         </div>
       )}
     </section>
   );
 }
-
-

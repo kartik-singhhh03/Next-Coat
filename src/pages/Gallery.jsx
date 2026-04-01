@@ -3,73 +3,146 @@ import { Link } from "react-router-dom";
 import { Maximize2, X } from "lucide-react";
 import SEO from "../components/SEO";
 
-// Categorized dummy data based on actual folder contents
+// Categorized data based on actual folder contents
 const galleryImages = [
+  // --- Cabinet Images (g1 to g6) ---
   {
     id: 1,
     src: "/images/gallery/g1.jpeg",
-    category: "Interior",
-    alt: "Modern Living Room",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
   {
     id: 2,
     src: "/images/gallery/g2.jpeg",
-    category: "Interior",
-    alt: "Bedroom Refresh",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
   {
     id: 3,
     src: "/images/gallery/g3.jpeg",
-    category: "Exterior",
-    alt: "Front Porch",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
   {
     id: 4,
     src: "/images/gallery/g4.jpeg",
-    category: "Cabinets",
-    alt: "Kitchen Cabinets",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
   {
     id: 5,
     src: "/images/gallery/g5.jpeg",
-    category: "Exterior",
-    alt: "Full Exterior",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
   {
     id: 6,
     src: "/images/gallery/g6.jpeg",
-    category: "Interior",
-    alt: "Staircase",
+    category: "cabinet",
+    alt: "Cabinet painting",
   },
+
+  // --- Interior Images (Except g16) ---
   {
     id: 7,
     src: "/images/gallery/g7.jpeg",
-    category: "Exterior",
-    alt: "Backyard Deck",
+    category: "interior",
+    alt: "Interior painting",
   },
   {
     id: 8,
     src: "/images/gallery/g8.jpeg",
-    category: "Cabinets",
-    alt: "Bathroom Vanity",
+    category: "interior",
+    alt: "Interior painting",
   },
   {
     id: 9,
     src: "/images/gallery/g9.jpeg",
-    category: "Interior",
-    alt: "Dining Room",
+    category: "interior",
+    alt: "Interior painting",
   },
   {
     id: 10,
     src: "/images/gallery/g10.jpeg",
-    category: "Cabinets",
-    alt: "Kitchen Island",
+    category: "interior",
+    alt: "Interior painting",
   },
   {
     id: 11,
     src: "/images/gallery/g11.jpeg",
-    category: "Exterior",
-    alt: "Siding Refresh",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 12,
+    src: "/images/gallery/g12.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 13,
+    src: "/images/gallery/g13.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 14,
+    src: "/images/gallery/g14.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 15,
+    src: "/images/gallery/g15.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+
+  // --- Exterior Images (g16 ONLY) ---
+  {
+    id: 16,
+    src: "/images/gallery/g16.jpeg",
+    category: "exterior",
+    alt: "Exterior painting",
+  },
+
+  // --- Interior Images (Remaining) ---
+  {
+    id: 17,
+    src: "/images/gallery/g17.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 18,
+    src: "/images/gallery/g18.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 19,
+    src: "/images/gallery/g19.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 20,
+    src: "/images/gallery/g20.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 21,
+    src: "/images/gallery/g21.jpeg",
+    category: "interior",
+    alt: "Interior painting",
+  },
+  {
+    id: 22,
+    src: "/images/gallery/g22.jpeg",
+    category: "interior",
+    alt: "Interior painting",
   },
 ];
 
@@ -78,7 +151,7 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [sliderPosition, setSliderPosition] = useState(50); // For Before/After
 
-  const categories = ["All", "Interior", "Exterior", "Cabinets"];
+  const categories = ["All", "cabinet", "interior", "exterior"];
 
   const filteredImages =
     filter === "All"
@@ -125,7 +198,7 @@ export default function GalleryPage() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 capitalize ${
                   filter === cat
                     ? "bg-secondary text-white shadow-lg shadow-secondary/30"
                     : "bg-white text-primary border border-gray-200 hover:bg-gray-50"
@@ -142,7 +215,10 @@ export default function GalleryPage() {
               <div
                 key={img.id}
                 className="break-inside-avoid relative group rounded-2xl overflow-hidden shadow-lg shadow-primary/5 cursor-pointer bg-white"
-                onClick={() => setSelectedImage(img)}
+                onClick={() => {
+                  setSelectedImage(img);
+                  document.body.style.overflow = "hidden";
+                }}
               >
                 <img
                   src={img.src}
@@ -277,40 +353,63 @@ export default function GalleryPage() {
               Get a Free Estimate
             </Link>
           </div>
-          <p className="mt-6 text-white font-semibold text-sm tracking-wide animate-pulse">?? Limited slots this month</p>
+          <p className="mt-6 text-white font-semibold text-sm tracking-wide animate-pulse">
+            ?? Limited slots this month
+          </p>
         </div>
       </section>
 
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-primary/95 backdrop-blur-sm p-4 md:p-12 animate-fade-in"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-5 animate-fade-in"
+          onClick={() => {
+            setSelectedImage(null);
+            document.body.style.overflow = "auto";
+          }}
         >
-          <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center justify-center">
+          <div className="relative flex items-center justify-center max-w-[95%] max-h-[90%]">
             <button
-              className="absolute -top-12 right-0 text-white hover:text-secondary transition-colors"
-              onClick={() => setSelectedImage(null)}
+              className="absolute top-5 right-5 bg-black/60 text-white rounded-full p-2 cursor-pointer z-[10000] transition-all duration-300 hover:bg-secondary"
+              onClick={() => {
+                setSelectedImage(null);
+                document.body.style.overflow = "auto";
+              }}
             >
-              <X size={32} />
+              <X size={24} />
             </button>
-            <img
-              src={selectedImage.src}
-              alt={`${selectedImage.alt} - NextCoat Howard County painters`}
-              loading="lazy"
-              className="w-full h-full object-contain rounded-lg shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <div className="mt-4 text-center text-white">
-              <span className="text-secondary text-xs font-bold tracking-widest uppercase block mb-1">
-                {selectedImage.category}
-              </span>
-              <span className="font-heading text-xl">{selectedImage.alt}</span>
+            <div className="flex flex-col items-center justify-center w-full h-full">
+              <img
+                src={selectedImage.src}
+                alt={`${selectedImage.alt} - NextCoat Howard County painters`}
+                loading="lazy"
+                className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-[0_20px_60px_rgba(0,0,0,0.3)] animate-[fadeZoom_0.3s_ease]"
+                onClick={(e) => e.stopPropagation()}
+              />
+              <div className="mt-4 text-center text-white">
+                <span className="text-secondary text-xs font-bold tracking-widest uppercase block mb-1">
+                  {selectedImage.category}
+                </span>
+                <span className="font-heading text-xl">
+                  {selectedImage.alt}
+                </span>
+              </div>
             </div>
+            <style>{`
+              @keyframes fadeZoom {
+                from {
+                  opacity: 0;
+                  transform: scale(0.95);
+                }
+                to {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+            `}</style>
           </div>
         </div>
       )}
     </div>
   );
 }
-
