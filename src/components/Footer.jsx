@@ -75,7 +75,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://www.facebook.com/people/NextCoat-Painting/61578520004397/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -101,7 +101,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/gonextcoat/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -232,11 +232,22 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div
-        className="max-w-7xl mx-auto px-6 lg:px-8 mt-24 pt-8 flex flex-col items-center justify-center text-center relative z-10"
+        className="max-w-7xl mx-auto px-6 lg:px-8 mt-16 md:mt-24 pt-8 flex flex-col md:flex-row items-center justify-center md:justify-between text-center gap-4 relative z-10"
         style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
       >
         <p className="text-[15px] font-medium" style={{ color: "#5A6A7A" }}>
-          © 2026 NextCoat Painting. All rights reserved.
+          © {new Date().getFullYear()} NextCoat Painting. All rights reserved.
+        </p>
+        <p className="text-[15px] font-medium" style={{ color: "#5A6A7A" }}>
+          Developed by{" "}
+          <a
+            href="https://www.linkedin.com/in/kartik-singh-879b6b288/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#FF8C00] hover:text-[#0C2C4C] hover:underline transition-colors duration-300 font-semibold"
+          >
+            Kartik Singh
+          </a>
         </p>
       </div>
     </footer>

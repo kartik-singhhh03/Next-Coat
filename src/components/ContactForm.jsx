@@ -2,12 +2,15 @@
 
 export default function ContactForm() {
   const [step, setStep] = useState(1);
+  const [status, setStatus] = useState(""); // "" | "loading" | "success" | "error"
   const [formData, setFormData] = useState({
     projectType: "",
     zipCode: "",
     fullName: "",
     email: "",
+    countryCode: "+1",
     phone: "",
+    message: "",
   });
 
   const updateField = (field, value) => {
@@ -17,11 +20,53 @@ export default function ContactForm() {
   const handleNext = () => setStep((prev) => Math.min(prev + 1, 3));
   const handleBack = () => setStep((prev) => Math.max(prev - 1, 1));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you! We have received your request.");
+    setStatus("loading");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xlgolnaq", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone
+            ? `${formData.countryCode} ${formData.phone}`
+            : "Not provided",
+          message: formData.message,
+          "Project Type": formData.projectType,
+          "Zip Code": formData.zipCode,
+          _subject: "New Painting Inquiry - NextCoat",
+          _captcha: "false",
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          projectType: "",
+          zipCode: "",
+          fullName: "",
+          email: "",
+          countryCode: "+1",
+          phone: "",
+          message: "",
+        });
+        setStep(1);
+        setTimeout(() => setStatus(""), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus(""), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus(""), 5000);
+    }
   };
 
   return (
@@ -45,6 +90,18 @@ export default function ContactForm() {
           />
         </div>
       </div>
+
+      {status === "success" && (
+        <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-700 rounded-lg text-center font-semibold animate-fade-in">
+          Message sent successfully! We will get back to you shortly.
+        </div>
+      )}
+
+      {status === "error" && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-center font-semibold animate-fade-in">
+          Something went wrong. Please try again.
+        </div>
+      )}
 
       <form
         onSubmit={handleSubmit}
@@ -166,15 +223,44 @@ export default function ContactForm() {
                   <label className="block text-sm font-semibold text-[#494C4E] mb-1">
                     Phone Number
                   </label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => updateField("phone", e.target.value)}
-                    className="w-full p-4 rounded-lg border border-gray-300 focus:border-[#F07D2A] focus:ring-2 focus:ring-[#F07D2A]/20 focus:outline-none transition-all"
-                    placeholder="(555) 123-4567"
-                  />
+                  <div className="flex">
+                    <select
+                      value={formData.countryCode}
+                      onChange={(e) =>
+                        updateField("countryCode", e.target.value)
+                      }
+                      className="p-4 rounded-l-lg border border-r-0 border-gray-300 bg-gray-50 focus:border-[#F07D2A] focus:ring-2 focus:ring-[#F07D2A]/20 focus:outline-none transition-all text-sm w-24 z-10"
+                    >
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+81">�🇵 +81</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+33">🇫🇷 +33</option>
+                    </select>
+                    <input
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => updateField("phone", e.target.value)}
+                      className="w-full p-4 rounded-r-lg border border-gray-300 focus:border-[#F07D2A] focus:ring-2 focus:ring-[#F07D2A]/20 focus:outline-none transition-all"
+                      placeholder="(555) 123-4567"
+                    />
+                  </div>
                 </div>
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-[#494C4E] mb-1">
+                  Message
+                </label>
+                <textarea
+                  required
+                  value={formData.message}
+                  onChange={(e) => updateField("message", e.target.value)}
+                  rows="3"
+                  className="w-full p-4 rounded-lg border border-gray-300 focus:border-[#F07D2A] focus:ring-2 focus:ring-[#F07D2A]/20 focus:outline-none transition-all resize-none"
+                  placeholder="Tell us more about your project..."
+                />
               </div>
             </div>
             <div className="flex justify-between gap-4 mt-auto">
@@ -187,22 +273,25 @@ export default function ContactForm() {
               </button>
               <button
                 type="submit"
-                className="flex-1 bg-[#F07D2A] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#0C2C4C] transition-colors shadow-lg shadow-[#F07D2A]/30 flex items-center justify-center gap-2 group"
+                disabled={status === "loading"}
+                className="flex-1 bg-[#F07D2A] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#0C2C4C] transition-colors shadow-lg shadow-[#F07D2A]/30 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Get My Free Estimate
-                <svg
-                  className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
+                {status === "loading" ? "Sending..." : "Get My Free Estimate"}
+                {status !== "loading" && (
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    ></path>
+                  </svg>
+                )}
               </button>
             </div>
           </div>

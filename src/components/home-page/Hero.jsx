@@ -112,52 +112,55 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/90" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[900px] mx-auto flex flex-col items-center justify-center text-center text-white px-6 mt-auto pt-[60px] pb-10 mb-[80px]">
+      <div className="relative z-10 w-full max-w-[900px] mx-auto flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 mt-auto pt-[60px] pb-10 mb-[60px] md:mb-[80px]">
         {/* Tag line with glassmorphism pill */}
-        <div className="inline-flex items-center gap-2 mb-8 glass-dark px-5 py-2 rounded-full">
+        <div className="inline-flex items-center gap-2 mb-6 md:mb-8 glass-dark px-4 py-1.5 md:px-5 md:py-2 rounded-full">
           <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-          <span className="text-white/90 text-xs md:text-sm font-medium tracking-widest uppercase">
+          <span className="text-white/90 text-[10px] md:text-sm font-medium tracking-widest uppercase">
             Howard County, MD
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading mb-[20px] max-w-5xl leading-[1.1] text-white">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading mb-[15px] md:mb-[20px] max-w-5xl leading-[1.15] md:leading-[1.1] text-white">
           Crafting Elegance Through{" "}
-          <span className="text-secondary italic">Premium</span>{" "}
+          <span className="text-secondary italic block sm:inline">Premium</span>{" "}
           <span className="text-white">Painting</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-white/90 max-w-2xl mb-[30px] font-light leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-[25px] md:mb-[30px] font-light leading-relaxed px-2">
           Serving Central MD & DC Suburbs with premium residential and
           commercial painting services. Licensed & Fully Insured.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto mb-[50px] relative z-30 reveal-on-scroll delay-200">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 w-full sm:w-auto mb-[40px] md:mb-[50px] relative z-30 reveal-on-scroll delay-200">
           <Link
             to="/contact"
-            className="w-full sm:w-auto px-8 py-4 bg-secondary text-white font-medium rounded-full hover:bg-white hover:text-primary shadow-lg hover:shadow-[0_0_30px_rgba(240,125,42,0.8)] transition-all duration-500 hover:scale-[1.03] text-lg"
+            className="w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 bg-secondary text-white font-medium rounded-full hover:bg-white hover:text-primary shadow-lg hover:shadow-[0_0_30px_rgba(240,125,42,0.8)] transition-all duration-500 hover:scale-[1.03] text-base md:text-lg text-center"
           >
             Get A Free Estimate
           </Link>
           <Link
             to="/gallery"
-            className="w-full sm:w-auto px-8 py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] text-lg"
+            className="w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] text-base md:text-lg text-center"
           >
             View Our Work
           </Link>
         </div>
 
-        <div className="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 text-white animate-pulse">
-          <Clock className="w-4 h-4 text-secondary" />
-          <span className="font-medium text-sm tracking-wide">
+        <div className="inline-flex items-center justify-center gap-2 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 text-white animate-pulse w-max max-w-[90vw]">
+          <Clock className="w-4 h-4 text-secondary flex-shrink-0" />
+          <span className="font-medium text-xs sm:text-sm tracking-wide truncate">
             Limited slots available this month
           </span>
         </div>
       </div>
 
       {/* Trusted Stats — Glassmorphism bar */}
-      <div ref={statsRef} className="relative w-full z-20 -mt-[60px] px-6 pb-6">
-        <div className="max-w-[900px] mx-auto glass-dark rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.2)] py-6 px-10 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-2">
+      <div
+        ref={statsRef}
+        className="relative w-full z-20 -mt-[40px] md:-mt-[60px] px-4 sm:px-6 pb-6"
+      >
+        <div className="max-w-[900px] mx-auto glass-dark rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.2)] py-5 px-6 md:py-6 md:px-10 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-2">
           <div className="text-center w-full">
             <p
               className={`text-3xl md:text-4xl font-heading text-white drop-shadow-[0_0_10px_rgba(240,125,42,0.2)] transition-all duration-700
@@ -173,7 +176,8 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="hidden sm:block h-12 w-px bg-white/20" />
+          <div className="hidden sm:block h-10 md:h-12 w-px bg-white/20" />
+          <div className="sm:hidden w-full h-px bg-white/20 max-w-[150px] mx-auto" />
 
           <div className="text-center w-full">
             <p
@@ -183,14 +187,15 @@ export default function Hero() {
               {years}+
             </p>
             <p
-              className={`text-xs md:text-sm text-white/60 tracking-widest uppercase mt-1 transition-all duration-700 delay-[400ms]
+              className={`text-[10px] md:text-sm text-white/60 tracking-widest uppercase mt-1 md:mt-2 transition-all duration-700 delay-[400ms]
               ${startStats ? "opacity-100" : "opacity-0"}`}
             >
               Years Experience
             </p>
           </div>
 
-          <div className="hidden sm:block h-12 w-px bg-white/20" />
+          <div className="hidden sm:block h-10 md:h-12 w-px bg-white/20" />
+          <div className="sm:hidden w-full h-px bg-white/20 max-w-[150px] mx-auto" />
 
           <div className="text-center w-full flex flex-col items-center">
             <p
