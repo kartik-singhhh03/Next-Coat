@@ -27,17 +27,17 @@ export default function About() {
         </div>
 
         {/* 2-Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch group/about reveal-on-scroll">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center group/about reveal-on-scroll">
           {/* Left Column - Image */}
-          <div className="w-full lg:w-5/12 shrink-0 h-[500px] lg:h-auto rounded-2xl overflow-hidden shadow-2xl relative shadow-primary/10 group-hover/about:shadow-[0_15px_40px_rgba(0,0,0,0.15)] transition-all duration-700">
+          <div className="w-full lg:w-5/12 shrink-0 h-auto rounded-2xl overflow-hidden shadow-2xl relative shadow-primary/10 group-hover/about:shadow-[0_15px_40px_rgba(0,0,0,0.15)] transition-all duration-700 bg-white/50 p-4 md:p-0">
             <img
               src={ana}
               alt="Ana G. Ricks - Principal & Director of Operations, NextCoat Howard County painters"
               loading="lazy"
-              className="w-full h-full object-cover object-center transform group-hover/about:scale-105 transition-transform duration-700 ease-out"
+              className="w-full h-auto max-h-[80vh] object-contain object-center transform group-hover/about:scale-[1.02] transition-transform duration-700 ease-out rounded-2xl"
             />
             {/* Inner subtle gradient overlay for premium feel */}
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none rounded-2xl"></div>
           </div>
 
           {/* Right Column - Glassmorphism Card */}

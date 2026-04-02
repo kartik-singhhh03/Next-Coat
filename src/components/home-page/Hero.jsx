@@ -166,56 +166,39 @@ export default function Hero() {
         ref={statsRef}
         className="relative w-full z-20 -mt-[40px] md:-mt-[60px] px-4 sm:px-6 pb-6"
       >
-        <div className="max-w-[900px] mx-auto glass-dark rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.2)] py-5 px-6 md:py-6 md:px-10 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-2">
+        <div className="max-w-[1000px] mx-auto glass-dark rounded-[20px] shadow-[0_20px_60px_rgba(0,0,0,0.2)] py-5 px-6 md:py-8 md:px-10 flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-4">
           <div className="text-center w-full">
             <p
-              className={`text-3xl md:text-4xl font-heading text-white drop-shadow-[0_0_10px_rgba(240,125,42,0.2)] transition-all duration-700
+              className={`text-lg md:text-xl xl:text-2xl font-heading text-white drop-shadow-[0_0_8px_rgba(240,125,42,0.3)] transition-all duration-700
               ${startStats ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             >
-              {homes}+
-            </p>
-            <p
-              className={`text-xs md:text-sm text-white/60 tracking-widest uppercase mt-1 transition-all duration-700 delay-100
-              ${startStats ? "opacity-100" : "opacity-0"}`}
-            >
-              Homes Painted
+              Locally Owned
+              <br className="hidden sm:block" /> & Operated
             </p>
           </div>
 
-          <div className="hidden sm:block h-10 md:h-12 w-px bg-white/20" />
+          <div className="hidden sm:block h-10 md:h-16 w-px bg-white/20" />
           <div className="sm:hidden w-full h-px bg-white/20 max-w-[150px] mx-auto" />
 
           <div className="text-center w-full">
             <p
-              className={`text-3xl md:text-4xl font-heading text-white drop-shadow-[0_0_10px_rgba(240,125,42,0.2)] transition-all duration-700 delay-[300ms]
+              className={`text-lg md:text-xl xl:text-2xl font-heading text-white drop-shadow-[0_0_8px_rgba(240,125,42,0.3)] transition-all duration-700 delay-[300ms]
               ${startStats ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             >
-              {years}+
-            </p>
-            <p
-              className={`text-[10px] md:text-sm text-white/60 tracking-widest uppercase mt-1 md:mt-2 transition-all duration-700 delay-[400ms]
-              ${startStats ? "opacity-100" : "opacity-0"}`}
-            >
-              Years Experience
+              Licensed & <br className="hidden sm:block" /> Fully Insured
             </p>
           </div>
 
-          <div className="hidden sm:block h-10 md:h-12 w-px bg-white/20" />
+          <div className="hidden sm:block h-10 md:h-16 w-px bg-white/20" />
           <div className="sm:hidden w-full h-px bg-white/20 max-w-[150px] mx-auto" />
 
           <div className="text-center w-full flex flex-col items-center">
             <p
-              className={`text-3xl md:text-4xl font-heading text-white flex items-center justify-center gap-1 drop-shadow-[0_0_10px_rgba(240,125,42,0.2)] transition-all duration-700 delay-[600ms]
+              className={`text-lg md:text-xl xl:text-2xl font-heading text-white drop-shadow-[0_0_8px_rgba(240,125,42,0.3)] transition-all duration-700 delay-[600ms]
               ${startStats ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
             >
-              {rating.toFixed(1)}{" "}
-              <span className="text-secondary text-2xl">★</span>
-            </p>
-            <p
-              className={`text-xs md:text-sm text-white/60 tracking-widest uppercase mt-1 transition-all duration-700 delay-[700ms]
-              ${startStats ? "opacity-100" : "opacity-0"}`}
-            >
-              Google Rating
+              Free Estimates
+              <br className="hidden sm:block" /> Available
             </p>
           </div>
         </div>

@@ -2,7 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+import FloatingCTA from "./components/FloatingCTA";
 import ScrollObserver from "./components/ScrollObserver";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -28,7 +28,7 @@ export default function App() {
       <ScrollToTop />
       <ScrollObserver />
       <Navbar />
-      <main className="min-h-screen">
+      <main className="min-h-screen pb-[64px] md:pb-0">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -45,14 +45,13 @@ export default function App() {
       {/* Sticky Mobile CTA */}
       <div className="md:hidden fixed bottom-0 left-0 w-full z-40">
         <a
-          href="tel:4434246019"
+          href="tel:+12403426095"
           className="flex items-center justify-center w-full py-5 bg-secondary text-white font-bold text-xl uppercase tracking-widest hover:brightness-110 transition-all shadow-[0_-10px_30px_rgba(240,125,42,0.4)]"
         >
           Call Now
         </a>
       </div>
-      <WhatsAppButton />
+      <FloatingCTA />
     </BrowserRouter>
   );
 }
-

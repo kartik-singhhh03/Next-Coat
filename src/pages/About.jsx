@@ -74,16 +74,16 @@ export default function About() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
             {/* Image */}
-            <div className="w-full lg:w-5/12 shrink-0 h-[500px] lg:h-auto rounded-[24px] overflow-hidden shadow-2xl relative shadow-primary/10 group">
+            <div className="w-full lg:w-5/12 shrink-0 h-auto rounded-[24px] overflow-hidden shadow-2xl relative shadow-primary/10 group bg-white/50 p-4 md:p-0">
               <img
                 src={ana}
                 alt="Ana G. Ricks - Principal - NextCoat Painting"
                 loading="lazy"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-[1.5s]"
+                className="w-full h-auto max-h-[80vh] object-contain object-center transform group-hover:scale-[1.02] transition-transform duration-[1.5s] rounded-[24px]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent pointer-events-none rounded-[24px]" />
             </div>
 
             {/* Bio Glass Card */}
@@ -209,31 +209,31 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 divide-y md:divide-y-0 md:divide-x divide-white/20 text-center">
             <div className="flex flex-col items-center pt-8 md:pt-0">
               <Medal className="w-12 h-12 text-secondary mb-4 opacity-90" />
-              <span className="text-5xl lg:text-6xl font-heading font-bold mb-2 text-white">
-                10+
+              <span className="text-3xl lg:text-4xl font-heading font-bold mb-2 text-white">
+                Locally Owned
               </span>
-              <span className="text-gray-300 font-light tracking-wide uppercase text-sm">
-                Years of Experience
+              <span className="text-gray-300 font-light tracking-wide uppercase text-sm mt-2">
+                & Operated In Area
               </span>
             </div>
 
             <div className="flex flex-col items-center pt-8 md:pt-0">
               <Users className="w-12 h-12 text-secondary mb-4 opacity-90" />
-              <span className="text-5xl lg:text-6xl font-heading font-bold mb-2 text-white">
-                500+
+              <span className="text-3xl lg:text-4xl font-heading font-bold mb-2 text-white">
+                Licensed
               </span>
-              <span className="text-gray-300 font-light tracking-wide uppercase text-sm">
-                Homes Transformed
+              <span className="text-gray-300 font-light tracking-wide uppercase text-sm mt-2">
+                & Fully Insured
               </span>
             </div>
 
             <div className="flex flex-col items-center pt-8 md:pt-0">
               <Star className="w-12 h-12 text-secondary mb-4 opacity-90" />
-              <span className="text-5xl lg:text-6xl font-heading font-bold mb-2 text-white">
-                5.0
+              <span className="text-3xl lg:text-4xl font-heading font-bold mb-2 text-white">
+                Free Estimates
               </span>
-              <span className="text-gray-300 font-light tracking-wide uppercase text-sm">
-                Star Average Rating
+              <span className="text-gray-300 font-light tracking-wide uppercase text-sm mt-2">
+                Available
               </span>
             </div>
           </div>
@@ -258,16 +258,17 @@ export default function About() {
               Get a Free Estimate
             </Link>
             <a
-              href="tel:4434246019"
+              href="tel:+12403426095"
               className="w-full sm:w-auto px-10 py-4 bg-white text-primary border border-gray-200 font-medium rounded-full hover:bg-gray-50 transition-all duration-300"
             >
               Call Now
             </a>
           </div>
-          <p className="text-secondary font-semibold text-sm tracking-wide mt-6 animate-pulse">?? Limited slots available this month</p>
+          <p className="text-secondary font-semibold text-sm tracking-wide mt-6 animate-pulse">
+            ?? Limited slots available this month
+          </p>
         </div>
       </section>
     </div>
   );
 }
-

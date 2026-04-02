@@ -1,6 +1,6 @@
 ﻿import { Link } from "react-router-dom";
 import UrgencyCTA from "../UrgencyCTA";
-import interior from "/images/interior.webp";
+import interior from "/images/gallery/g10.webp";
 import exterior from "/images/exterior.webp";
 import cabinet from "/images/hero3.webp";
 

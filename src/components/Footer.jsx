@@ -69,7 +69,7 @@ export default function Footer() {
             className="text-[16px] font-bold tracking-wide mb-8"
             style={{ color: "#FF8C00" }}
           >
-            MHIC #05-167608
+            MHIC License #167608
           </p>
 
           {/* Social Icons */}
@@ -180,10 +180,10 @@ export default function Footer() {
                 <Phone size={20} />
               </span>
               <a
-                href="tel:443-424-6019"
+                href="tel:+12403426095"
                 className="group-hover:text-[#FF8C00] group-hover:translate-x-1 transition-all duration-300"
               >
-                443-424-6019
+                (240) 342-6095
               </a>
             </p>
             <p className="flex items-center justify-center md:justify-start gap-4 transition-all duration-300 group mt-4">
@@ -191,10 +191,10 @@ export default function Footer() {
                 <Mail size={20} />
               </span>
               <a
-                href="mailto:contact@nextcoatpainting.com"
+                href="mailto:info@gonextcoat.com"
                 className="group-hover:text-[#FF8C00] group-hover:translate-x-1 transition-all duration-300 break-all md:break-normal"
               >
-                contact@nextcoatpainting.com
+                info@gonextcoat.com
               </a>
             </p>
           </address>
@@ -232,22 +232,11 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div
-        className="max-w-7xl mx-auto px-6 lg:px-8 mt-16 md:mt-24 pt-8 flex flex-col md:flex-row items-center justify-center md:justify-between text-center gap-4 relative z-10"
+        className="max-w-7xl mx-auto px-6 lg:px-8 mt-16 md:mt-24 pt-8 flex flex-col md:flex-row items-center justify-center text-center gap-4 relative z-10"
         style={{ borderTop: "1px solid rgba(0,0,0,0.08)" }}
       >
         <p className="text-[15px] font-medium" style={{ color: "#5A6A7A" }}>
           © {new Date().getFullYear()} NextCoat Painting. All rights reserved.
-        </p>
-        <p className="text-[15px] font-medium" style={{ color: "#5A6A7A" }}>
-          Developed by{" "}
-          <a
-            href="https://www.linkedin.com/in/kartik-singh-879b6b288/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#FF8C00] hover:text-[#0C2C4C] hover:underline transition-colors duration-300 font-semibold"
-          >
-            Kartik Singh
-          </a>
         </p>
       </div>
     </footer>

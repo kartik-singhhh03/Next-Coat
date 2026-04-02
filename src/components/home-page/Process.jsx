@@ -149,7 +149,7 @@ const Process = () => {
             Our Proven Process
           </h2>
           <p className="text-accent text-lg font-body leading-relaxed max-w-2xl mx-auto">
-            Every project follows a disciplined, transparent system â€” so you
+            Every project follows a disciplined, transparent system so you
             always know what to expect.
           </p>
         </div>

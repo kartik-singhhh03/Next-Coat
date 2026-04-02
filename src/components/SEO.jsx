@@ -50,7 +50,7 @@ export default function SEO({ title, description, keywords, schema }) {
         name: "NextCoat Painting",
         image: "https://gonextcoat.com/logo.svg",
         url: "https://gonextcoat.com",
-        telephone: "443-424-6019",
+        telephone: "(240) 342-6095",
         address: {
           "@type": "PostalAddress",
           streetAddress: "Howard County",

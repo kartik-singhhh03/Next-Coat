@@ -25,7 +25,7 @@ export default function ContactForm() {
     setStatus("loading");
 
     try {
-      const response = await fetch("https://formspree.io/f/xlgolnaq", {
+      const response = await fetch("https://formspree.io/f/xgoplvgq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -107,6 +107,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="relative min-h-[300px] flex flex-col"
       >
+        <input type="text" name="_gotcha" style={{ display: "none" }} />
         {/* Step 1 */}
         {step === 1 && (
           <div className="flex-grow animate-fade-in flex flex-col justify-center">
@@ -198,6 +199,7 @@ export default function ContactForm() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   value={formData.fullName}
                   onChange={(e) => updateField("fullName", e.target.value)}
@@ -212,6 +214,7 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     value={formData.email}
                     onChange={(e) => updateField("email", e.target.value)}
@@ -241,6 +244,7 @@ export default function ContactForm() {
                     </select>
                     <input
                       type="tel"
+                      name="phone"
                       value={formData.phone}
                       onChange={(e) => updateField("phone", e.target.value)}
                       className="w-full p-4 rounded-r-lg border border-gray-300 focus:border-[#F07D2A] focus:ring-2 focus:ring-[#F07D2A]/20 focus:outline-none transition-all"
@@ -254,6 +258,7 @@ export default function ContactForm() {
                   Message
                 </label>
                 <textarea
+                  name="message"
                   required
                   value={formData.message}
                   onChange={(e) => updateField("message", e.target.value)}

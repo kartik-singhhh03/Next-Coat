@@ -16,7 +16,7 @@ export default function Home() {
     name: "NextCoat Painting",
     image: "https://gonextcoat.com/logo.svg",
     url: "https://gonextcoat.com/",
-    telephone: "443-424-6019",
+    telephone: "(240) 342-6095",
     address: {
       "@type": "PostalAddress",
       streetAddress: "",
@@ -89,16 +89,16 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:contact@nextcoatpainting.com"
+              href="mailto:info@gonextcoat.com"
               className="w-full sm:w-auto bg-secondary text-white px-8 py-4 rounded-full font-body font-semibold hover:bg-white hover:text-primary transition-all duration-300 shadow-lg shadow-secondary/30"
             >
               Request a Quote
             </a>
             <a
-              href="tel:443-424-6019"
+              href="tel:+12403426095"
               className="w-full sm:w-auto bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-full font-body font-semibold hover:bg-white/10 transition-colors duration-300"
             >
-              Call 443-424-6019
+              Call (240) 342-6095
             </a>
           </div>
         </div>

@@ -24,7 +24,7 @@ export default function Footer() {
             environments.
           </p>
           <p className="text-[15px] font-bold text-[#F07D2A] tracking-wider mb-8">
-            MHIC #05-167608
+            MHIC License #167608
           </p>
           <div className="flex gap-4">
             <a
@@ -73,7 +73,7 @@ export default function Footer() {
           <ul className="space-y-6 text-[15px]">
             <li className="flex justify-center md:justify-start">
               <a
-                href="tel:443-424-6019"
+                href="tel:+12403426095"
                 className="flex items-center gap-4 hover:text-[#F07D2A] hover:translate-x-[3px] transition-all duration-300 ease-in-out group"
               >
                 <div className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 group-hover:bg-[#F07D2A]/10 transition-colors duration-300">
@@ -91,12 +91,12 @@ export default function Footer() {
                     ></path>
                   </svg>
                 </div>
-                <span>443-424-6019</span>
+                <span>(240) 342-6095</span>
               </a>
             </li>
             <li className="flex justify-center md:justify-start">
               <a
-                href="mailto:contact@nextcoatpainting.com"
+                href="mailto:info@gonextcoat.com"
                 className="flex flex-col md:flex-row items-center md:items-start gap-4 hover:text-[#F07D2A] hover:translate-x-[3px] transition-all duration-300 ease-in-out group break-all md:break-normal"
               >
                 <div className="w-10 h-10 rounded-full bg-[rgba(255,255,255,0.05)] flex items-center justify-center flex-shrink-0 group-hover:bg-[#F07D2A]/10 transition-colors duration-300 mt-1 md:mt-0">
@@ -114,7 +114,7 @@ export default function Footer() {
                     ></path>
                   </svg>
                 </div>
-                <span className="md:mt-2">contact@nextcoatpainting.com</span>
+                <span className="md:mt-2">info@gonextcoat.com</span>
               </a>
             </li>
           </ul>

@@ -42,7 +42,7 @@ export default function Navbar() {
           <img
             src="/logo.svg"
             alt="NextCoat"
-            className="w-auto h-8 sm:h-9 md:h-10 lg:h-12 mr-2 object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
+            className="w-auto h-12 md:h-14 lg:h-16 mr-2 object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
             style={{
               filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.1))",
             }}
