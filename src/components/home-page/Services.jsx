@@ -1,8 +1,8 @@
 ﻿import { Link } from "react-router-dom";
 import UrgencyCTA from "../UrgencyCTA";
-import interior from "/images/interior.jpeg";
-import exterior from "/images/exterior.jpeg";
-import cabinet from "/images/hero3.jpeg";
+import interior from "/images/interior.webp";
+import exterior from "/images/exterior.webp";
+import cabinet from "/images/hero3.webp";
 
 const servicesList = [
   {

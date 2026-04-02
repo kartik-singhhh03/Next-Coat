@@ -2,9 +2,9 @@
 import { Link } from "react-router-dom";
 import { Clock } from "lucide-react";
 const images = [
-  "/images/gallery/g1.jpeg",
-  "/images/gallery/g2.jpeg",
-  "/images/gallery/g3.jpeg",
+  "/images/gallery/g1.webp",
+  "/images/gallery/g2.webp",
+  "/images/gallery/g3.webp",
 ];
 
 function useCountUp(
@@ -103,7 +103,9 @@ export default function Hero() {
           src={img}
           alt={`Howard County painters exterior painting Maryland ${index + 1}`}
           loading={index === 0 ? "eager" : "lazy"}
-          decoding={index === 0 ? "async" : "auto"}
+          decoding={index === 0 ? "sync" : "async"}
+          width="1920"
+          height="1080"
           fetchpriority={index === 0 ? "high" : "auto"}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out
             ${index === current ? "opacity-100 scale-105" : "opacity-0 scale-100"} transform origin-center`}

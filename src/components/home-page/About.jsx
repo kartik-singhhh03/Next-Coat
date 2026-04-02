@@ -1,5 +1,5 @@
 ﻿import { Link } from "react-router-dom";
-import ana from "/images/ana-img.jpeg";
+import ana from "/images/ana-img.webp";
 
 export default function About() {
   return (

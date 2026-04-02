@@ -8,37 +8,37 @@ const galleryImages = [
   // --- Cabinet Images (g1 to g6) ---
   {
     id: 1,
-    src: "/images/gallery/g1.jpeg",
+    src: "/images/gallery/g1.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
   {
     id: 2,
-    src: "/images/gallery/g2.jpeg",
+    src: "/images/gallery/g2.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
   {
     id: 3,
-    src: "/images/gallery/g3.jpeg",
+    src: "/images/gallery/g3.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
   {
     id: 4,
-    src: "/images/gallery/g4.jpeg",
+    src: "/images/gallery/g4.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
   {
     id: 5,
-    src: "/images/gallery/g5.jpeg",
+    src: "/images/gallery/g5.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
   {
     id: 6,
-    src: "/images/gallery/g6.jpeg",
+    src: "/images/gallery/g6.webp",
     category: "cabinet",
     alt: "Cabinet painting",
   },
@@ -46,55 +46,55 @@ const galleryImages = [
   // --- Interior Images (Except g16) ---
   {
     id: 7,
-    src: "/images/gallery/g7.jpeg",
+    src: "/images/gallery/g7.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 8,
-    src: "/images/gallery/g8.jpeg",
+    src: "/images/gallery/g8.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 9,
-    src: "/images/gallery/g9.jpeg",
+    src: "/images/gallery/g9.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 10,
-    src: "/images/gallery/g10.jpeg",
+    src: "/images/gallery/g10.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 11,
-    src: "/images/gallery/g11.jpeg",
+    src: "/images/gallery/g11.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 12,
-    src: "/images/gallery/g12.jpeg",
+    src: "/images/gallery/g12.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 13,
-    src: "/images/gallery/g13.jpeg",
+    src: "/images/gallery/g13.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 14,
-    src: "/images/gallery/g14.jpeg",
+    src: "/images/gallery/g14.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 15,
-    src: "/images/gallery/g15.jpeg",
+    src: "/images/gallery/g15.webp",
     category: "interior",
     alt: "Interior painting",
   },
@@ -102,7 +102,7 @@ const galleryImages = [
   // --- Exterior Images (g16 ONLY) ---
   {
     id: 16,
-    src: "/images/gallery/g16.jpeg",
+    src: "/images/gallery/g16.webp",
     category: "exterior",
     alt: "Exterior painting",
   },
@@ -110,37 +110,37 @@ const galleryImages = [
   // --- Interior Images (Remaining) ---
   {
     id: 17,
-    src: "/images/gallery/g17.jpeg",
+    src: "/images/gallery/g17.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 18,
-    src: "/images/gallery/g18.jpeg",
+    src: "/images/gallery/g18.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 19,
-    src: "/images/gallery/g19.jpeg",
+    src: "/images/gallery/g19.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 20,
-    src: "/images/gallery/g20.jpeg",
+    src: "/images/gallery/g20.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 21,
-    src: "/images/gallery/g21.jpeg",
+    src: "/images/gallery/g21.webp",
     category: "interior",
     alt: "Interior painting",
   },
   {
     id: 22,
-    src: "/images/gallery/g22.jpeg",
+    src: "/images/gallery/g22.webp",
     category: "interior",
     alt: "Interior painting",
   },
@@ -170,7 +170,7 @@ export default function GalleryPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply z-10" />
           <img
-            src="/images/gallery/g5.jpeg"
+            src="/images/gallery/g5.webp"
             alt="Beautifully painted home"
             className="w-full h-full object-cover opacity-60"
           />
@@ -260,7 +260,7 @@ export default function GalleryPage() {
           <div className="relative h-[400px] md:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl flex select-none">
             {/* "After" Image */}
             <img
-              src="/images/gallery/g4.jpeg"
+              src="/images/gallery/g4.webp"
               alt="After Transformation - Cabinet painting services"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover z-10"
@@ -271,7 +271,7 @@ export default function GalleryPage() {
 
             {/* "Before" Image (Simulated with grayscale for dramatic effect) */}
             <img
-              src="/images/gallery/g4.jpeg"
+              src="/images/gallery/g4.webp"
               alt="Before Transformation - Cabinet painting services"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover filter grayscale contrast-75 brightness-90 z-20 pointer-events-none"
@@ -336,7 +336,7 @@ export default function GalleryPage() {
 
       {/* 5. CTA SECTION */}
       <section className="py-24 md:py-32 bg-primary relative overflow-hidden text-center">
-        <div className="absolute inset-0 bg-[url('/images/gallery/g1.jpeg')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
+        <div className="absolute inset-0 bg-[url('/images/gallery/g1.webp')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
         <div className="max-w-3xl mx-auto px-6 relative z-10">
           <h2 className="text-4xl md:text-5xl font-heading text-white mb-6">
             Start Your Transformation Today

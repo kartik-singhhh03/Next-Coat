@@ -1,5 +1,5 @@
 ﻿import { Link } from "react-router-dom";
-import ana from "/images/ana-img.jpeg";
+import ana from "/images/ana-img.webp";
 import {
   CheckCircle,
   ShieldCheck,
@@ -24,7 +24,7 @@ export default function About() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/80 z-10" />
           <img
-            src="/images/gallery/gallery-2.jpeg"
+            src="/images/gallery/gallery-2.webp"
             alt="Beautifully painted home exterior"
             className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />

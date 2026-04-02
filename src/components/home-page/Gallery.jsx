@@ -1,11 +1,11 @@
 ﻿import { useState } from "react";
 const images = [
-  "/images/gallery/g1.jpeg",
-  "/images/gallery/g2.jpeg",
-  "/images/gallery/g3.jpeg",
-  "/images/gallery/g4.jpeg",
-  "/images/gallery/g5.jpeg",
-  "/images/gallery/g6.jpeg",
+  "/images/gallery/g1.webp",
+  "/images/gallery/g2.webp",
+  "/images/gallery/g3.webp",
+  "/images/gallery/g4.webp",
+  "/images/gallery/g5.webp",
+  "/images/gallery/g6.webp",
 ];
 
 const Overlay = () => (
