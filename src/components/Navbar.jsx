@@ -16,6 +16,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
@@ -31,14 +42,19 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
-        isTransparent
-          ? "bg-transparent py-4 md:py-6"
-          : "bg-white/95 backdrop-blur-md shadow-md py-3 md:py-4"
+        isOpen
+          ? "bg-[#0C2C4C] py-3 md:py-4 shadow-none" // Force solid dark background, no backdrop filter
+          : isTransparent
+            ? "bg-transparent py-4 md:py-6"
+            : "bg-white/95 backdrop-blur-md shadow-md py-3 md:py-4"
       }`}
     >
       <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:max-w-7xl xl:mx-auto flex justify-between items-center gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center z-50 group flex-shrink-0">
+        <Link
+          to="/"
+          className="flex items-center relative z-[1000] group flex-shrink-0"
+        >
           <img
             src="/logo.svg"
             alt="NextCoat"
@@ -92,7 +108,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className={`lg:hidden z-50 focus:outline-none transition-colors duration-300 ml-auto flex-shrink-0 ${
+          className={`lg:hidden relative z-[1000] focus:outline-none transition-colors duration-300 ml-auto flex-shrink-0 ${
             isOpen
               ? "text-white"
               : isTransparent
@@ -136,7 +152,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-[#0C2C4C]/95 backdrop-blur-lg z-40 transition-all duration-400 ease-in-out lg:hidden ${
+        className={`fixed top-0 left-0 w-full h-[100dvh] bg-[#0C2C4C] z-[999] transition-all duration-400 ease-in-out lg:hidden ${
           isOpen
             ? "opacity-100 visible translate-x-0"
             : "opacity-0 invisible translate-x-full"
