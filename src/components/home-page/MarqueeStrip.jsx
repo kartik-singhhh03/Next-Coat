@@ -6,15 +6,14 @@ const marqueeItems = [
   "Interior • Exterior • Cabinet Painting",
   "Serving Howard County & Central Maryland",
   "Premium Quality Finishes",
-  "10+ Years of Experience",
+  "Locally Owned and Operated",
   "Free Estimates Available",
 ];
 
 export default function MarqueeStrip() {
   return (
     <section className="bg-gradient-to-r from-[#0C2C4C] to-[#133d63] text-white flex items-center relative h-14 md:h-[70px] border-y border-white/10">
-
-      <div className="flex whitespace-nowrap overflow-hidden group w-full marquee-mask">     
+      <div className="flex whitespace-nowrap overflow-hidden group w-full marquee-mask">
         {/* First Block */}
         <div className="animate-marquee flex items-center flex-shrink-0 group-hover:[animation-play-state:paused]">
           {marqueeItems.map((item, idx) => (
@@ -22,19 +21,26 @@ export default function MarqueeStrip() {
               <span className="marquee-text font-body font-medium px-6 md:px-10 text-[13px] md:text-[15px]">
                 {item}
               </span>
-              <span className="text-[#F07D2A] text-lg opacity-[0.85] select-none drop-shadow-[0_0_8px_rgba(240,125,42,0.3)]">•</span>
+              <span className="text-[#F07D2A] text-lg opacity-[0.85] select-none drop-shadow-[0_0_8px_rgba(240,125,42,0.3)]">
+                •
+              </span>
             </React.Fragment>
           ))}
         </div>
 
         {/* Duplicate Block for Seamless Loop */}
-        <div className="animate-marquee flex items-center flex-shrink-0 group-hover:[animation-play-state:paused]" aria-hidden="true">
+        <div
+          className="animate-marquee flex items-center flex-shrink-0 group-hover:[animation-play-state:paused]"
+          aria-hidden="true"
+        >
           {marqueeItems.map((item, idx) => (
             <React.Fragment key={`second-${idx}`}>
               <span className="marquee-text font-body font-medium px-6 md:px-10 text-[13px] md:text-[15px]">
                 {item}
               </span>
-              <span className="text-[#F07D2A] text-lg opacity-[0.85] select-none drop-shadow-[0_0_8px_rgba(240,125,42,0.3)]">•</span>
+              <span className="text-[#F07D2A] text-lg opacity-[0.85] select-none drop-shadow-[0_0_8px_rgba(240,125,42,0.3)]">
+                •
+              </span>
             </React.Fragment>
           ))}
         </div>
@@ -63,4 +69,3 @@ export default function MarqueeStrip() {
     </section>
   );
 }
-
