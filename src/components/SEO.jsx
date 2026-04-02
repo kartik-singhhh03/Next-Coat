@@ -1,11 +1,23 @@
 ﻿import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function SEO({ title, description, keywords, schema }) {
+  const location = useLocation();
+
   useEffect(() => {
     // 1. Meta Title
     document.title = title
       ? `${title} | NextCoat Painting`
       : "NextCoat Painting | Howard County Painters";
+
+    // Canonical Tag
+    let canonical = document.querySelector("link[rel='canonical']");
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.rel = "canonical";
+      document.head.appendChild(canonical);
+    }
+    canonical.href = `https://gonextcoat.com${location.pathname === "/" ? "" : location.pathname}`;
 
     // 2. Meta Description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -30,7 +42,32 @@ export default function SEO({ title, description, keywords, schema }) {
       "Howard County painters, Interior painting MD, Exterior painting Maryland, Cabinet painting services, professional painters";
 
     // 4. Structured Data (Local Business Schema)
-    if (schema) {
+    let businessSchema = schema;
+    if (!businessSchema) {
+      businessSchema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        name: "NextCoat Painting",
+        image: "https://gonextcoat.com/logo.svg",
+        url: "https://gonextcoat.com",
+        telephone: "443-424-6019",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Howard County",
+          addressLocality: "Maryland",
+          addressRegion: "MD",
+          addressCountry: "US",
+        },
+        priceRange: "$$",
+        servesCuisine: [
+          "Interior Painting",
+          "Exterior Painting",
+          "Cabinet Painting",
+        ],
+      };
+    }
+
+    if (businessSchema) {
       let scriptSchema = document.querySelector("#seo-schema");
       if (!scriptSchema) {
         scriptSchema = document.createElement("script");
@@ -38,7 +75,7 @@ export default function SEO({ title, description, keywords, schema }) {
         scriptSchema.id = "seo-schema";
         document.head.appendChild(scriptSchema);
       }
-      scriptSchema.innerHTML = JSON.stringify(schema);
+      scriptSchema.innerHTML = JSON.stringify(businessSchema);
     }
 
     return () => {
@@ -48,7 +85,7 @@ export default function SEO({ title, description, keywords, schema }) {
         scriptSchema.remove();
       }
     };
-  }, [title, description, keywords, schema]);
+  }, [title, description, keywords, schema, location.pathname]);
 
   return null;
 }

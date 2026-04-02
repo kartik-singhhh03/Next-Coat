@@ -101,8 +101,10 @@ export default function Hero() {
         <img
           key={index}
           src={img}
-          alt={`Howard County painters exterior painting Maryland ${index}`}
+          alt={`Howard County painters exterior painting Maryland ${index + 1}`}
           loading={index === 0 ? "eager" : "lazy"}
+          decoding={index === 0 ? "async" : "auto"}
+          fetchpriority={index === 0 ? "high" : "auto"}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-in-out
             ${index === current ? "opacity-100 scale-105" : "opacity-0 scale-100"} transform origin-center`}
         />
@@ -135,12 +137,14 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-5 w-full sm:w-auto mb-[40px] md:mb-[50px] relative z-30 reveal-on-scroll delay-200">
           <Link
             to="/contact"
+            aria-label="Get A Free Estimate"
             className="w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 bg-secondary text-white font-medium rounded-full hover:bg-white hover:text-primary shadow-lg hover:shadow-[0_0_30px_rgba(240,125,42,0.8)] transition-all duration-500 hover:scale-[1.03] text-base md:text-lg text-center"
           >
             Get A Free Estimate
           </Link>
           <Link
             to="/gallery"
+            aria-label="View Our Work Portfolio"
             className="w-full sm:w-auto px-6 py-3.5 md:px-8 md:py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-500 hover:scale-[1.03] text-base md:text-lg text-center"
           >
             View Our Work

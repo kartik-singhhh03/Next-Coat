@@ -80,9 +80,10 @@ export default function Navbar() {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block flex-shrink-0 z-50">
+        <div className="hidden lg:block flex-shrink-0 z-50">
           <Link
             to="/contact"
+            aria-label="Get a Free Estimate"
             className="inline-block bg-[#F07D2A] text-white font-body font-semibold px-6 py-3 rounded-full hover:bg-opacity-90 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm lg:text-base whitespace-nowrap"
           >
             Get A Free Estimate
@@ -178,6 +179,7 @@ export default function Navbar() {
             >
               <Link
                 to="/contact"
+                aria-label="Get a Free Estimate"
                 onClick={() => setIsOpen(false)}
                 className="w-full max-w-[320px] bg-[#F07D2A] text-white font-body font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-[#F07D2A]/20 hover:bg-[#0C2C4C] hover:shadow-none transition-all duration-300 flex items-center justify-center min-h-[56px]"
               >
