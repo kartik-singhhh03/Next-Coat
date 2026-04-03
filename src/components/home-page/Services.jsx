@@ -6,14 +6,14 @@ import cabinet from "/images/cab_img.jpeg";
 
 const servicesList = [
   {
-    title: "Interior Painting MD",
+    title: "Interior Painting",
     description:
       "Precision wall and ceiling coatings with flawless finishes that redefine your living space.",
     image: interior,
     alt: "Interior painting MD - NextCoat Painting",
   },
   {
-    title: "Exterior Painting Maryland",
+    title: "Exterior Painting",
     description:
       "Durable, weather-resistant coatings that enhance curb appeal and protect your home.",
     image: exterior,
