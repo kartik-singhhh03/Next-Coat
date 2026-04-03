@@ -334,6 +334,21 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      {/* 4. NEW BEFORE/AFTER IMAGE SECTION */}
+      <section className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-primary mb-8">
+          Cabinet Transformation
+        </h2>
+        <div className="rounded-2xl overflow-hidden shadow-lg">
+          <img
+            src="/images/before_img.jpeg"
+            alt="Cabinet painting before and after transformation"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       {/* 5. CTA SECTION */}
       <section className="py-24 md:py-32 bg-primary relative overflow-hidden text-center">
         <div className="absolute inset-0 bg-[url('/images/gallery/g1.webp')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>

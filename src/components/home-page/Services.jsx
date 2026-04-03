@@ -2,7 +2,7 @@
 import UrgencyCTA from "../UrgencyCTA";
 import interior from "/images/gallery/g10.webp";
 import exterior from "/images/exterior.webp";
-import cabinet from "/images/hero3.webp";
+import cabinet from "/images/cab_img.jpeg";
 
 const servicesList = [
   {
