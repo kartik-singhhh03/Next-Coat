@@ -126,9 +126,9 @@ export default function Hero() {
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading mb-[15px] md:mb-[20px] max-w-5xl leading-[1.15] md:leading-[1.1] text-white">
-          Crafting Elegance Through{" "}
-          <span className="text-secondary italic block sm:inline">Premium</span>{" "}
-          <span className="text-white">Painting</span>
+          Redefining Your Home,{" "}
+          <span className="text-secondary italic block sm:inline">One Coat</span>{" "}
+          <span className="text-white">at a Time</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mb-[25px] md:mb-[30px] font-light leading-relaxed px-2">
