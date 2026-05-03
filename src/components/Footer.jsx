@@ -145,10 +145,23 @@ export default function Footer() {
             className="space-y-4 text-[16px] font-medium"
             style={{ color: "#5A6A7A" }}
           >
-            {["Home", "About", "Services", "Gallery", "Contact"].map((item) => (
+            {[
+              "Home",
+              "About",
+              "Services",
+              "Gallery",
+              "Contact",
+              "Privacy Policy",
+            ].map((item) => (
               <li key={item}>
                 <Link
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  to={
+                    item === "Home"
+                      ? "/"
+                      : item === "Privacy Policy"
+                        ? "/privacy-policy"
+                        : `/${item.toLowerCase()}`
+                  }
                   className="inline-block transition-all duration-300 hover:text-[#FF8C00] hover:translate-x-1"
                 >
                   {item}
